@@ -63,6 +63,7 @@
   <build_export_depend>roscpp</build_export_depend>
   <build_export_depend>rospy</build_export_depend>
   <build_export_depend>sensor_msgs</build_export_depend>
+  <depend>cv_bridge</depend>
   <exec_depend>actionlib</exec_depend>
   <exec_depend>dbw_mkz_msgs</exec_depend>
   <exec_depend>geometry_msgs</exec_depend>

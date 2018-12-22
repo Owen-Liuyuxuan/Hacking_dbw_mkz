@@ -56,8 +56,7 @@ CppAD::AD<double> transform_angle(CppAD::AD<double> x)
 // presented in the classroom matched the previous radius.
 //
 // This is the length from front to CoG that has a similar radius.
-const double Lf = 2;
-const double V = 15;
+
 class FG_eval
 {
 public:

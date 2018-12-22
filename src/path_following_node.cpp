@@ -123,7 +123,7 @@ int main(int argc, char **argv)
     while (ros::ok())
     {
         geometry_msgs::Twist cmd_vel;
-        cmd_vel.linear.x = 15;
+        cmd_vel.linear.x = V;
         cmd_vel.angular.z = output_omega;
         pub_handle1.publish(cmd_vel);
         ros::spinOnce();

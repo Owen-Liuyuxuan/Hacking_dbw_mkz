@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   dbw_mkz_msgs
   geometry_msgs
   nav_msgs
+  cv_bridge
   roscpp
   rospy
   sensor_msgs
@@ -19,7 +20,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
-
+find_package(OpenCV REQUIRED)
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -120,7 +121,7 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
+ include
   ${catkin_INCLUDE_DIRS}
 )
 include_directories(src/Eigen-3.3)
@@ -143,7 +144,8 @@ link_directories(/usr/local/lib)
 ## The recommended prefix ensures that target names across packages don't collide
  add_executable(twist_controller src/twist_controller_node.cpp)
  add_executable(path_follower src/path_following_node.cpp)
-
+ add_executable(lane_detector src/lane_detector_node.cpp)
+ add_executable(lane_detector_test src/lane_detector_tester.cpp)
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
@@ -162,7 +164,14 @@ link_directories(/usr/local/lib)
    ${catkin_LIBRARIES}
    mpc
  )
-
+target_link_libraries(lane_detector
+  ${catkin_LIBRARIES}
+  ${OpenCV_LIBS}
+)
+target_link_libraries(lane_detector_test
+  ${catkin_LIBRARIES}
+  ${OpenCV_LIBS}
+)
 #############
 ## Install ##
 #############

@@ -5,7 +5,8 @@
 #include "Eigen-3.3/Eigen/Core"
 
 using namespace std;
-
+const double Lf = 2;
+const double V = 15;
 class MPC {
  public:
   MPC();

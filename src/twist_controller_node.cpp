@@ -101,7 +101,6 @@ int main(int argc, char **argv)
         pub_handle2.publish(steering_cmd);
 
         dbw_mkz_msgs::BrakeCmd brake_cmd;
-        brake_cmd.boo_cmd = false;
         brake_cmd.clear = false;
         brake_cmd.count = 0;
         brake_cmd.enable = true;
