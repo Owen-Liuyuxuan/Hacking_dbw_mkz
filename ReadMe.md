@@ -16,12 +16,12 @@ Currently, the project contain code for :
     1. Semi-customed launchers and world files that modify the original world or change some parts of the codes into my code.
     2. A simple implementation for twist_controller (the controller that outputs steering, throttle and braking commands). Source codes for the official twist_controller is actually open source.
     3. A MPC implementation for path_follower (the controller that takes in target_path and outputs twist command to twist_controller).
+    4. A prototype lane detector that produce target_path. Notice: It is not robust enough and it may break sometimes. 
 
 TODO: 
 
-    1. Further hack into the vision system and provide non-trivial lane-detection algorithm.
-    2. Improve system's performance in new world.
-    3. Provide some "plain" and intuitive big picture on the system. As well as some details.
+    1. Improve system's robustness, especially for lane detector.
+    2. Provide some "plain" and intuitive big picture on the system. As well as some details.
 
 ## 2. Dependencies
 The path_following node is actually implemented similar to the Udacity [MPC project](https://github.com/udacity/CarND-MPC-Project) in self-driving car Nanodegree program. 
