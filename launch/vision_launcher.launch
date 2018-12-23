@@ -8,8 +8,12 @@
     </include>
 
     <!--image_processing pipeline output target_path -->
+    <!-- choose the official or customed lane-detector here -->
+
     <!-- <include file="$(find dbw_mkz_vision_sim)/launch/lane_detection.launch" /> -->
     <node pkg = "my_launch_car_sim" type = "lane_detector" name = "lane_detector"/>
+
+
 
     <!--given car position and target_path get command -->
     <node pkg = "my_launch_car_sim" type = "path_follower" name = "path_following" />
